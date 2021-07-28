@@ -1,8 +1,8 @@
 #ifdef __EMSCRIPTEN__
-#include <Gl/Regal.h>
+#include <GL/Regal.h>
 #include <emscripten.h>
 #include <emscripten/html5.h>
-#include "esutil.h"
+#include "esUtil.h"
 #endif
 
 #include <GL/gl.h>
