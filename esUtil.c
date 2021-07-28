@@ -23,8 +23,9 @@
 #include <string.h>
 #include <stdarg.h>
 #include <sys/time.h>
+#include <GL/Regal.h>
 #include <GLES2/gl2.h>
-#include <EGL/egl.h>
+//#include <EGL/egl.h>
 #include "esUtil.h"
 
 #include  <X11/Xlib.h>

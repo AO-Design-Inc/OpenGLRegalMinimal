@@ -6,6 +6,7 @@
 #endif
 
 #include <GL/gl.h>
+//#include <EGL/egl.h>
 #include <stdio.h>
 
 typedef struct
@@ -15,14 +16,15 @@ typedef struct
 
 } UserData;
 
-void Draw(ESContext *escontext) {
-   UserData *userData = esContext->userData;
+void Draw(ESContext *esContext) {
+   UserData *userData = (UserData*) esContext->userData;
 	// Set the viewport
    glViewport ( 0, 0, esContext->width, esContext->height );
    
    // Clear the color buffer
    glClear ( GL_COLOR_BUFFER_BIT );
-    glClearColor(0,0,42,1);
+    glClearColor(0,0,0.42,0.8);
+   glClear ( GL_COLOR_BUFFER_BIT );
 
     printf("horte\n");
 }
@@ -37,7 +39,7 @@ int main ( int argc, char *argv[] )
    esContext.userData = &userData;
 
    esCreateWindow ( &esContext, "Hello Triangle", 320, 240, ES_WINDOW_RGB );
-	RegalMakeCurrent((RegalSystemContext)1);
+	//RegalMakeCurrent((RegalSystemContext)1);
 
 
    /*
