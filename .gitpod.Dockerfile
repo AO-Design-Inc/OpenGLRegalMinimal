@@ -22,6 +22,7 @@ RUN cd $HOME \
     && echo "alias git-commit-jo=\"git commit --author=\\\"Jo Gao <joyce.gao01@gmail.com>\\\"\"" >> .bash_aliases \
     && echo "alias git-commit-abhi=\"git commit --author=\\\"Abhishek Cherath <abhicherath@gmail.com>\\\"\"" >> .bash_aliases
 
+RUN sudo apt update
 
 RUN sudo apt install openssh-sftp-server -y && \
     sudo ln -s /usr/lib/sftp-server /usr/libexec/sftp-server
