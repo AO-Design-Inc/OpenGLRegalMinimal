@@ -15,6 +15,13 @@ RUN cd $HOME/.bashrc.d \
     && touch emsdk \
     && echo ". ~/.emsdk/emsdk_env.sh" >> emsdk
 
+# Adds authorship to bashrc through aliases though this is kind of a 
+# messy way to do it
+RUN cd $HOME \
+    && touch .bash_aliases \
+    && echo "alias git-commit-jo=\"git commit --author=\"Jo Gao <joyce.gao01@gmail.com>\"\"" >> .bash_aliases \
+    && echo "alias git-commit-abhi=\"git commit --author=\"Abhishek Cherath <abhicherath@gmail.com>\"\"" >> .bash_aliases
+
 #Syncthing for poor abhishek to be able to work.
 RUN sudo curl -s -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg && \
     echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" \
