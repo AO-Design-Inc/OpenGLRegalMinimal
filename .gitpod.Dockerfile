@@ -22,12 +22,6 @@ RUN cd $HOME \
     && echo "alias git-commit-jo=\"git commit --author=\\\"Jo Gao <joyce.gao01@gmail.com>\\\"\"" >> .bash_aliases \
     && echo "alias git-commit-abhi=\"git commit --author=\\\"Abhishek Cherath <abhicherath@gmail.com>\\\"\"" >> .bash_aliases
 
-#Syncthing for poor abhishek to be able to work.
-RUN sudo curl -s -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg && \
-    echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" \
-    | sudo tee /etc/apt/sources.list.d/syncthing.list && \
-    printf "Package: *\nPin: origin apt.syncthing.net\nPin-Priority: 990\n" | sudo tee /etc/apt/preferences.d/syncthing && \
-    sudo apt-get update && sudo apt-get install -y syncthing
 
 RUN sudo apt install openssh-sftp-server -y && \
     sudo ln -s /usr/lib/sftp-server /usr/libexec/sftp-server
