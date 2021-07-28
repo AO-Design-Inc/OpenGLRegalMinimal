@@ -22,6 +22,8 @@ RUN sudo curl -s -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://sy
     printf "Package: *\nPin: origin apt.syncthing.net\nPin-Priority: 990\n" | sudo tee /etc/apt/preferences.d/syncthing && \
     sudo apt-get update && sudo apt-get install -y syncthing
 
+RUN sudo apt install openssh-sftp-server -y && \
+    sudo ln -s /usr/lib/sftp-server /usr/libexec/sftp-server
 
 # get latex needed for distrib step of building
 # the plugins
